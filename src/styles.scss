@@ -1,6 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'app/styles/variables';
+@import 'app/styles/apple-wobble';
+@import 'app/styles/bootstrap/bootstrap';
 
 html, body {
   height: 100%;
   margin: 0;
+  font-family: "open sans";
+  font-size: 14px;
+}
+
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+h1, h2, h3 {
+  font-family: $header-font;
+}
+
+h1 {
+  color: $red;
+}
+
+.btn {
+  font-size: 16px;
+}
+
+a.nav-link, a.nav-link:visited, a.nav-link:hover, a.nav-link:active {
+  color: $text-color;
+}
+
+.nav-tabs {
+  border: none;
+  .nav-link {
+    background-color: $half-white;
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+
+    &.active {
+      background-color: $almost-white;
+    }
+  }
+}
+
+.tab-content {
+  padding: 30px;
+  background-color: $almost-white;
+  border: none;
 }
