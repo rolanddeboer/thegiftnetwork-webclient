@@ -1,0 +1,15 @@
+@import 'variables';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $background-color;
+  min-height: 100vh;
+}
+.not-found-text {
+  font-family: $header-font;
+  font-size: 35px;
+  margin-top: 50px;
+}

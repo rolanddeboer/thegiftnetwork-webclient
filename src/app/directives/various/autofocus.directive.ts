@@ -1,7 +1,7 @@
 import { OnInit, ElementRef, Renderer, Input, Directive } from '@angular/core';
 
 @Directive({ selector: '[appAutoFocus]' })
-export class FocusDirective implements OnInit {
+export class AutofocusDirective implements OnInit {
 
     @Input('appAutoFocus') isFocused: boolean;
 

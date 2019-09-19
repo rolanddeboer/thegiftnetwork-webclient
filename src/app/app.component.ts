@@ -1,16 +1,16 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { slideInAnimation } from 'src/app/animations/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [ slideInAnimation ]
 })
-export class AppComponent {
-  @ViewChild( "emailInput", { static: false } ) emailInput: ElementRef;
-  ngAfterViewInit() {
-    this.emailInput.nativeElement.focus();
-  }
-  onTabChange() {
-    setTimeout(() => { if (this.emailInput) this.emailInput.nativeElement.focus() }, 50);
+export class AppComponent 
+{
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 }

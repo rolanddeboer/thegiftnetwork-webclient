@@ -30,7 +30,13 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules",
+                "src/app/styles"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -96,7 +102,13 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules",
+                "src/app/styles"
+              ]
+            }
           }
         },
         "lint": {

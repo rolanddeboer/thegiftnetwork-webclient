@@ -1,0 +1,14 @@
+@import 'variables';
+
+:host {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  padding-top:50px;
+  background-color: $background-color;
+}
+
+app-login {
+  width: 500px;
+  margin-top:50px;
+}

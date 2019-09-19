@@ -1,0 +1,24 @@
+<div [class.thinking]="loggingIn" >
+  <ngb-tabset (tabChange)="onTabChange()">
+    <ngb-tab>
+      <ng-template ngbTabTitle><span class="login-title">Log in</span></ng-template>
+      <ng-template ngbTabContent>
+        <form>
+            <div class="form-group">
+              <input #emailInput type="email" class="form-control form-control-lg" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control form-control-lg" placeholder="Password">
+            </div>
+            <button type="button" class="btn btn-lg btn-success" (click)="loginClick()">Log in</button>
+          </form>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle><span class="signup-title">Sign up</span></ng-template>
+      <ng-template ngbTabContent>
+        The Gift Network is still in development!
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>
