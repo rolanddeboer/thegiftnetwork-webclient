@@ -1,11 +1,14 @@
 #!/bin/bash
 
+HOSTNAME="dhenuh"
+read -p "[sudo] password on $HOSTNAME: " PASSWORD
+
 rm -rf dist/*
 
 ng build --prod
 
-rsync -haze ssh dist/* dhenuh:~/sync-stage --delete
+rsync -haze ssh dist/* "$HOSTNAME":~/sync-stage --delete
 
-mpg321 finished.mp3 -q &
+ssh -t "$HOSTNAME" "/var/www/thegiftnetwork.org/www/cl-build.sh $PASSWORD"
 
-ssh -t dhenuh /var/www/thegiftnetwork.org/www/cl-build.sh
+mpg321 finished.mp3 -q

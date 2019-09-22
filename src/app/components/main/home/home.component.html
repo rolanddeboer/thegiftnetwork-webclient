@@ -1,2 +1,3 @@
-<app-header></app-header>
-<app-login></app-login>
+<app-header *ngIf="settings.username"></app-header>
+<app-login *ngIf="!settings.username"></app-login>
+<p *ngIf="settings.username">Logged in as {{ settings.username }}</p>

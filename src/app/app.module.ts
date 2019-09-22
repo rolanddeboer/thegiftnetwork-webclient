@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,12 +18,13 @@ import { LoginComponent } from './components/security/login/login.component';
 import { HeaderComponent } from './components/main/header/header.component';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent, data: {animation: 'HomePage'}  },
-  { path: '',
-    redirectTo: '/home',
+  { path: '', component: HomeComponent, data: {animation: 'AboutPage'}  },
+  { path: 'home',
+    redirectTo: '',
     pathMatch: 'full'
   },
-  { path: '**', component: PageNotFoundComponent, data: {animation: 'AboutPage'}  }
+  { path: 'login', component: LoginComponent, data: {animation: 'About1Page'}  },
+  { path: '**', component: PageNotFoundComponent, data: {animation: 'About2Page'}  }
 ];
 
 @NgModule({
@@ -36,14 +38,14 @@ const appRoutes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      appRoutes
     ),
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    NgbTabsetModule
+    NgbTabsetModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

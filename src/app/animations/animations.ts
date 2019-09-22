@@ -3,9 +3,7 @@ import {
   style,
   animate,
   transition,
-  query,
-  group,
-  animateChild
+  query
 } from '@angular/animations';
 
 export const slideInAnimation =
